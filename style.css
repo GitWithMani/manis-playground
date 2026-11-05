@@ -662,3 +662,54 @@ a:focus-visible {
     scroll-behavior: auto;
   }
 }
+
+
+
+/* One featured player, selected with native keyboard-accessible buttons. */
+.room-listening .playlist-select {
+  display: inline-block;
+  min-height: 44px;
+  margin-top: 16px;
+  padding: 10px 18px;
+  border: 1px solid var(--brass);
+  background: transparent;
+  color: var(--cream);
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.room-listening .playlist-select[hidden] { display: none; }
+
+.room-listening .playlist-select:hover,
+.room-listening .playlist-select[aria-pressed="true"] {
+  background: var(--cream);
+  color: var(--espresso);
+}
+
+.room-listening .playlist-select:focus {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}
+
+.room-listening .featured-playlist {
+  width: 100%;
+  max-width: 660px;
+  margin: 56px auto 0;
+}
+
+.room-listening .player-status {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.room-listening #featured-player {
+  display: block;
+  width: 100%;
+  max-width: 660px;
+  height: 450px;
+  border: 0;
+}

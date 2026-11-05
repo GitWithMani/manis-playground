@@ -47,4 +47,26 @@
   window.addEventListener('resize', updateControls);
   if ('ResizeObserver' in window) new ResizeObserver(updateControls).observe(track);
   updateControls();
+  // Selection loads one official player; it never requests playback.
+  const player = document.getElementById('featured-player');
+  const playerHeading = document.getElementById('featured-heading');
+  const status = document.querySelector('.room-listening .player-status');
+  const selections = Array.from(document.querySelectorAll('.room-listening .playlist-select'));
+
+  selections.forEach(button => {
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      if (button.getAttribute('aria-pressed') === 'true') return;
+      const title = button.dataset.playlistTitle;
+      player.title = `Apple Music playlist: ${title}`;
+      player.src = button.dataset.embedUrl;
+      playerHeading.textContent = title;
+      status.textContent = `Selected: ${title}. Start playback in the player.`;
+      selections.forEach(choice => {
+        choice.setAttribute('aria-pressed', String(choice === button));
+      });
+      // Keep focus on the selecting button; native buttons support Enter/Space.
+    });
+  });
 })();
+
