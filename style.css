@@ -166,3 +166,196 @@ footer {
     transition: none;
   }
 }
+
+/* Shared navigation: all four rooms stay visible, including on phones. */
+.site-header {
+  flex-wrap: wrap;
+  gap: 24px 40px;
+}
+
+.site-identity {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+}
+
+.logo {
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  text-decoration: none;
+  text-underline-offset: 7px;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--brass);
+  text-decoration: underline;
+}
+
+.site-nav a[aria-current="page"] {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 5px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  transform: translateY(-200%);
+  padding: 14px 20px;
+  background: var(--cream);
+  color: var(--espresso);
+  font-family: "DM Sans", sans-serif;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Shared room typography; each room below has its own composition. */
+.room {
+  padding: 80px 8% 100px;
+  min-height: 75vh;
+}
+
+.room-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 2px;
+  color: var(--brass);
+}
+
+.room h1 {
+  font-size: clamp(48px, 8vw, 104px);
+}
+
+.room h2 {
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: normal;
+  line-height: 1.15;
+  margin: 20px 0;
+}
+
+.room-description,
+.listening-shelf > p:last-child,
+.gallery-note > p:last-child,
+.radio-note > p:last-child {
+  font-size: 19px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 480px;
+}
+
+/* A listening corner, with a quiet shelf for future playlists. */
+.room--listening {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 64px;
+}
+
+.listening-shelf {
+  border-top: 1px solid var(--brass);
+  padding-top: 32px;
+}
+
+/* An open wall; the empty space is intentional until pictures arrive. */
+.gallery-space {
+  margin-top: 64px;
+  min-height: 320px;
+  border-top: 1px solid var(--brass);
+  border-bottom: 1px solid var(--brass);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 48px 0;
+}
+
+.gallery-note {
+  width: 100%;
+  max-width: 440px;
+}
+
+/* A still, centered waiting room for a future broadcast. */
+.room--radio {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.room--radio .room-description,
+.radio-note > p:last-child {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signal-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--brass);
+}
+
+.radio-note {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--brass);
+  width: 100%;
+  max-width: 480px;
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    width: 100%;
+  }
+
+  .room--listening {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-nav ul {
+    gap: 4px 20px;
+  }
+
+  .room {
+    padding: 64px 6% 80px;
+  }
+
+  .gallery-space {
+    margin-top: 48px;
+    min-height: 240px;
+  }
+}
