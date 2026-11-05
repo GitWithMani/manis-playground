@@ -14,4 +14,4 @@ I'm learning Git, GitHub, and Visual Studio Code.
 ## My goal
 To become more comfortable with coding and build projects that support my creative ideas and professional development.
   
-  
+  Today I made my first Git commit!
