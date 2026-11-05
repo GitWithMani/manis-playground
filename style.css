@@ -387,3 +387,69 @@ a:focus-visible {
   font-weight: 400;
   letter-spacing: -1px;
 }
+
+
+/* Home flows from invitation to portrait to introduction, without a tall hero. */
+.home-page .hero {
+  min-height: 0;
+  padding-top: 48px;
+  padding-bottom: 0;
+}
+
+.home-page .hero .eyebrow {
+  margin: 0;
+}
+
+.home-page .intro {
+  margin: 0;
+}
+
+.home-page .hero-photo {
+  max-width: 480px;
+  margin-top: 24px;
+}
+
+.home-page .about {
+  padding-top: 28px;
+  padding-bottom: 48px;
+  text-align: center;
+}
+
+.home-page .about > p:first-child {
+  margin: 0;
+}
+
+.home-page .about h2 {
+  margin: 16px 0;
+}
+
+/* The paragraph is no longer the last child: the listening link follows it. */
+.home-page .about > p:last-of-type {
+  max-width: 550px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.home-page .about .button {
+  margin-top: 24px;
+  max-width: 100%;
+  line-height: 1.6;
+  white-space: normal;
+}
+
+@media (max-width: 600px) {
+  .home-page .hero {
+    padding-top: 32px;
+  }
+
+  .home-page .hero-photo {
+    margin-top: 20px;
+  }
+
+  .home-page .about {
+    padding-top: 24px;
+    padding-bottom: 36px;
+  }
+}
