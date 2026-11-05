@@ -64,9 +64,11 @@
       status.textContent = `Selected: ${title}. Start playback in the player.`;
       selections.forEach(choice => {
         choice.setAttribute('aria-pressed', String(choice === button));
+        choice.closest('.playlist-card').classList.toggle('is-selected', choice === button);
       });
       // Keep focus on the selecting button; native buttons support Enter/Space.
     });
   });
 })();
+
 
