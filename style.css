@@ -1,6 +1,4 @@
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap');
 
@@ -85,7 +83,7 @@ h1 {
 }
 
 h1 em {
-  color: var(--brass);
+  color: var(--cream);
   font-weight: normal;
 }
 
@@ -222,7 +220,7 @@ footer {
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
-  color: var(--brass);
+  color: var(--cream);
   text-decoration: underline;
 }
 
@@ -373,4 +371,19 @@ a:focus-visible {
     min-height: 240px;
   }
 }
-
+.home-script {
+  display: block;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  word-spacing: 6px;
+  line-height: 1.6;
+  color: var(--cream);
+}
+.hero h1 {
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
