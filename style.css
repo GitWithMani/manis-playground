@@ -56,9 +56,10 @@ body {
   min-height: 75vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   padding: 80px 8%;
+  text-align: center;
 }
 
 h1 {
@@ -79,6 +80,7 @@ h1 em {
   line-height: 1.7;
   color: var(--muted);
   max-width: 440px;
+  text-align:center;
 }
 
 .button {
@@ -113,11 +115,25 @@ h1 em {
   font-weight: normal;
 }
 
+
 .about > p:last-child {
   max-width: 550px;
   color: var(--muted);
   line-height: 1.8;
   font-size: 18px;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 560px;
+  margin: 50px auto 0;
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
 }
 
 footer {
@@ -139,3 +155,4 @@ footer {
     letter-spacing: 2px;
   }
 }
+
