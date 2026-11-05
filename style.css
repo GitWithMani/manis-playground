@@ -795,3 +795,59 @@ a:focus-visible {
     inset: 0;
   }
 }
+
+
+
+/* Listening Room welcome: original portrait alongside the introduction. */
+.room-listening .listening-welcome {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 48px;
+  max-width: 1040px;
+  margin-bottom: 56px;
+}
+
+.room-listening .listening-welcome .room-intro {
+  margin-bottom: 0;
+}
+
+.room-listening .listening-portrait {
+  width: 100%;
+  max-width: 320px;
+  margin: 0;
+  justify-self: end;
+}
+
+.room-listening .listening-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The supplied covers are portrait-oriented: show the complete image. */
+.room-listening .playlist-cover.has-artwork {
+  display: block;
+  overflow: hidden;
+}
+
+.room-listening .playlist-cover.has-artwork img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .room-listening .listening-welcome {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .room-listening .listening-portrait {
+    justify-self: center;
+  }
+}
