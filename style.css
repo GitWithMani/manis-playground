@@ -10,7 +10,8 @@
   --cream: #F3E9D8;
   --brass: #C5A46D;
   --plum: #B85D32;
-  --muted: #E0D7C8;
+  --muted: var(--cream);
+  --room-background: var(--espresso);
 }
 
 
@@ -24,9 +25,22 @@ html {
 
 body {
   margin: 0;
-  background: var(--espresso);
+  background: var(--room-background);
   color: var(--cream);
   font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+/* Theme the whole page, including navigation and footer. Home keeps its forest. */
+body.room-listening {
+  --room-background: #102822;
+}
+
+body.room-gallery {
+  --room-background: #111311;
+}
+
+body.room-radio {
+  --room-background: #3B1723;
 }
 
 .site-header {
@@ -359,3 +373,4 @@ a:focus-visible {
     min-height: 240px;
   }
 }
+
