@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography Study | Mani's Room</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&amp;family=Cormorant+Garamond:wght@400;500&amp;family=DM+Sans:wght@400;500&amp;family=IM+Fell+English&amp;family=Libre+Franklin:wght@400;500&amp;family=Pinyon+Script&amp;family=UnifrakturMaguntia&amp;display=swap" rel="stylesheet">
+    <style>
+* { box-sizing: border-box; }
+html { background: #111311; color: #F3E9D8; }
+body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+a { color: inherit; text-underline-offset: 5px; }
+a:focus-visible { outline: 2px solid #F3E9D8; outline-offset: 5px; }
+/* :focus remains available in older Safari versions without :focus-visible. */
+a:focus { outline: 2px solid #F3E9D8; outline-offset: 5px; }
+.skip { position: absolute; top: 8px; left: 8px; padding: 12px; background: #111311; transform: translateY(-180%); z-index: 2; }
+.skip:focus { transform: translateY(0); }
+.study-header, main, .study-footer { max-width: 1500px; margin: 0 auto; padding: 40px 5%; }
+.study-header { padding-top: 64px; padding-bottom: 16px; }
+.study-header h1 { font-family: Georgia, serif; font-size: clamp(36px, 5vw, 64px); font-weight: normal; line-height: 1.15; margin: 12px 0 24px; }
+.study-header p { max-width: 760px; }
+.study-nav { display: flex; flex-wrap: wrap; margin-top: 24px; }
+.study-nav a { padding: 12px 20px 12px 0; min-height: 44px; }
+.system { margin-bottom: 80px; scroll-margin-top: 24px; }
+.system-header { max-width: 800px; margin-bottom: 28px; }
+.system-header h2 { font-size: 26px; line-height: 1.3; font-weight: normal; }
+.system-header p { color: #D1C4B2; }
+.pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+.specimen { min-width: 0; padding: 36px; border: 1px solid #65736A; color: #F3E9D8; }
+.forest { background: #102822; }
+.ink { background: #111311; }
+.swatch-label { margin: 0 0 36px; color: #C5A46D; font: 12px/1.6 Arial, sans-serif; letter-spacing: 1px; }
+.wordmark { font-family: var(--display); font-size: 30px; line-height: 1.4; margin: 0 0 24px; font-weight: var(--weight); }
+.sample-nav { display: flex; flex-wrap: wrap; margin-bottom: 36px; }
+.sample-nav a { font-family: var(--utility); font-size: 14px; line-height: 1.5; padding: 12px 18px 12px 0; min-height: 44px; color: #D1C4B2; }
+.sample-nav a:first-child { color: #C5A46D; text-decoration-thickness: 2px; }
+.welcome { font-family: var(--display); font-weight: var(--weight); font-size: clamp(42px, 4vw, 64px); line-height: 1.25; margin: 0 0 28px; letter-spacing: -0.5px; }
+.welcome span { display: block; }
+.copy { font-family: var(--body); font-size: 21px; line-height: 1.75; max-width: 52ch; color: #D1C4B2; margin: 0 0 40px; }
+.room-titles { border-top: 1px solid #65736A; padding-top: 28px; }
+.room-titles p { font-family: var(--display); font-weight: var(--weight); font-size: clamp(30px, 3vw, 44px); line-height: 1.3; margin: 0 0 24px; }
+.small-label { font-family: var(--utility); font-size: 12px; line-height: 1.8; letter-spacing: 1.3px; color: #C5A46D; margin: 30px 0 0; }
+.system-a { --display: "Cormorant Garamond", Georgia, serif; --body: "Cormorant Garamond", Georgia, serif; --utility: "DM Sans", Arial, sans-serif; --weight: 500; }
+.system-a .accent { font-family: "UnifrakturMaguntia", Georgia, serif; font-size: 1.35em; font-weight: 400; }
+.system-b { --display: "Bodoni Moda", "Didot", "Bodoni MT", Georgia, serif; --body: "Cormorant Garamond", Georgia, serif; --utility: "DM Sans", Arial, sans-serif; --weight: 400; }
+.system-b .accent { font-family: "Pinyon Script", "Bodoni Moda", Georgia, serif; font-size: 1.08em; line-height: 1.5; letter-spacing: 0; }
+.system-c { --display: "IM Fell English", Georgia, serif; --body: "Libre Franklin", Arial, sans-serif; --utility: "Libre Franklin", Arial, sans-serif; --weight: 400; }
+.system-c .copy { font-size: 18px; line-height: 1.85; }
+.study-footer { border-top: 1px solid #65736A; padding-top: 24px; color: #D1C4B2; font-size: 14px; }
+@media (max-width: 1000px) { .pair { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 600px) {
+ .study-header, main, .study-footer { padding-left: 6%; padding-right: 6%; }
+ .specimen { padding: 28px 20px; }
+ .wordmark { font-size: 26px; }
+ .welcome { font-size: 42px; }
+ .system { margin-bottom: 56px; }
+}
+    </style>
+</head>
+<body>
+    <a class="skip" href="#study">Skip to specimens</a>
+    <header class="study-header">
+        <p>MANI'S ROOM / TYPE STUDY</p>
+        <h1>Three ways to set the room.</h1>
+        <p>A standalone study, not a redesign. Compare the same words on deep forest and ink backgrounds. The accent faces are used sparingly; all body copy stays in readable text faces.</p>
+        <p>On a wide screen, backgrounds sit side by side. On smaller screens, they stack. Fonts load from Google Fonts; if unavailable, serif and sans-serif fallbacks keep the page usable, but the intended comparison requires the web fonts to load.</p>
+        <nav class="study-nav" aria-label="Typography systems">
+            <a href="#system-a">A — Literary Gothic</a>
+            <a href="#system-b">B — Metropolitan Romantic</a>
+            <a href="#system-c">C — Bookish After Hours</a>
+        </nav>
+    </header>
+    <main id="study" tabindex="-1">
+        <section class="system system-a" id="system-a" aria-labelledby="heading-a">
+            <header class="system-header">
+                <h2 id="heading-a">A — Literary Gothic</h2>
+                <p>Cormorant Garamond gives the room names and welcome a literary softness. One UnifrakturMaguntia initial introduces a restrained historical accent. DM Sans keeps navigation and labels clear.</p>
+                <p><strong>Use:</strong> Cormorant Garamond 500: headings; 400: body. UnifrakturMaguntia 400: the first M in the wordmark only. DM Sans 400/500: navigation and labels.</p>
+            </header>
+            <div class="pair">
+                <section class="specimen forest" aria-labelledby="a-forest-label">
+                    <h3 class="swatch-label" id="a-forest-label">Deep forest / #102822</h3>
+                    <p class="wordmark"><span class="accent">M</span>ANI'S ROOM</p>
+                    <nav class="sample-nav" aria-label="System A, forest sample navigation">
+                        <a href="index.html">Home</a>
+                        <a href="listening.html">The Listening Room</a>
+                        <a href="gallery.html">The Gallery</a>
+                        <a href="radio.html">On Air</a>
+                    </nav>
+                    <p class="welcome">Come in. <span>Stay awhile.</span></p>
+                    <p class="copy">Welcome to Mani's Room — a place for thoughtful listening, unexpected discovery, and music that stays with you.</p>
+                    <div class="room-titles">
+                        <p>The Listening Room</p>
+                        <p>The Gallery</p>
+                        <p>On Air</p>
+                    </div>
+                    <p class="small-label">A SPACE FOR THE SONICALLY CURIOUS<br>CURATED WITH INTENTION</p>
+                </section>
+                <section class="specimen ink" aria-labelledby="a-ink-label">
+                    <h3 class="swatch-label" id="a-ink-label">Ink / #111311</h3>
+                    <p class="wordmark"><span class="accent">M</span>ANI'S ROOM</p>
+                    <nav class="sample-nav" aria-label="System A, ink sample navigation">
+                        <a href="index.html">Home</a>
+                        <a href="listening.html">The Listening Room</a>
+                        <a href="gallery.html">The Gallery</a>
+                        <a href="radio.html">On Air</a>
+                    </nav>
+                    <p class="welcome">Come in. <span>Stay awhile.</span></p>
+                    <p class="copy">Welcome to Mani's Room — a place for thoughtful listening, unexpected discovery, and music that stays with you.</p>
+                    <div class="room-titles">
+                        <p>The Listening Room</p>
+                        <p>The Gallery</p>
+                        <p>On Air</p>
+                    </div>
+                    <p class="small-label">A SPACE FOR THE SONICALLY CURIOUS<br>CURATED WITH INTENTION</p>
+                </section>
+            </div>
+        </section>
+        <section class="system system-b" id="system-b" aria-labelledby="heading-b">
+            <header class="system-header">
+                <h2 id="heading-b">B — Metropolitan Romantic</h2>
+                <p>Bodoni Moda brings a sharper, high-contrast rhythm to the room titles. Cormorant Garamond keeps the supporting text warm. Pinyon Script appears only on “Stay awhile.” as a formal calligraphic gesture.</p>
+                <p><strong>Use:</strong> Bodoni Moda 400: wordmark and room headings. Cormorant Garamond 400: body. Pinyon Script 400: one large welcome phrase. DM Sans 400/500: navigation and labels.</p>
+            </header>
+            <div class="pair">
+                <section class="specimen forest" aria-labelledby="b-forest-label">
+                    <h3 class="swatch-label" id="b-forest-label">Deep forest / #102822</h3>
+                    <p class="wordmark">MANI'S ROOM</p>
+                    <nav class="sample-nav" aria-label="System B, forest sample navigation">
+                        <a href="index.html">Home</a>
+                        <a href="listening.html">The Listening Room</a>
+                        <a href="gallery.html">The Gallery</a>
+                        <a href="radio.html">On Air</a>
+                    </nav>
+                    <p class="welcome">Come in. <span class="accent">Stay awhile.</span></p>
+                    <p class="copy">Welcome to Mani's Room — a place for thoughtful listening, unexpected discovery, and music that stays with you.</p>
+                    <div class="room-titles">
+                        <p>The Listening Room</p>
+                        <p>The Gallery</p>
+                        <p>On Air</p>
+                    </div>
+                    <p class="small-label">A SPACE FOR THE SONICALLY CURIOUS<br>CURATED WITH INTENTION</p>
+                </section>
+                <section class="specimen ink" aria-labelledby="b-ink-label">
+                    <h3 class="swatch-label" id="b-ink-label">Ink / #111311</h3>
+                    <p class="wordmark">MANI'S ROOM</p>
+                    <nav class="sample-nav" aria-label="System B, ink sample navigation">
+                        <a href="index.html">Home</a>
+                        <a href="listening.html">The Listening Room</a>
+                        <a href="gallery.html">The Gallery</a>
+                        <a href="radio.html">On Air</a>
+                    </nav>
+                    <p class="welcome">Come in. <span class="accent">Stay awhile.</span></p>
+                    <p class="copy">Welcome to Mani's Room — a place for thoughtful listening, unexpected discovery, and music that stays with you.</p>
+                    <div class="room-titles">
+                        <p>The Listening Room</p>
+                        <p>The Gallery</p>
+                        <p>On Air</p>
+                    </div>
+                    <p class="small-label">A SPACE FOR THE SONICALLY CURIOUS<br>CURATED WITH INTENTION</p>
+                </section>
+            </div>
+        </section>
+        <section class="system system-c" id="system-c" aria-labelledby="heading-c">
+            <header class="system-header">
+                <h2 id="heading-c">C — Bookish After Hours</h2>
+                <p>IM Fell English, a revival of seventeenth-century printing types, lends the headings a slightly irregular, bookish voice. Libre Franklin draws on the American Franklin Gothic tradition, bringing an urban print sensibility to clear, intimate supporting text.</p>
+                <p><strong>Use:</strong> IM Fell English 400: wordmark and headings. Libre Franklin 400/500: body, navigation, and labels. No decorative accent face; the character comes from the pairing.</p>
+            </header>
+            <div class="pair">
+                <section class="specimen forest" aria-labelledby="c-forest-label">
+                    <h3 class="swatch-label" id="c-forest-label">Deep forest / #102822</h3>
+                    <p class="wordmark">MANI'S ROOM</p>
+                    <nav class="sample-nav" aria-label="System C, forest sample navigation">
+                        <a href="index.html">Home</a>
+                        <a href="listening.html">The Listening Room</a>
+                        <a href="gallery.html">The Gallery</a>
+                        <a href="radio.html">On Air</a>
+                    </nav>
+                    <p class="welcome">Come in. <span>Stay awhile.</span></p>
+                    <p class="copy">Welcome to Mani's Room — a place for thoughtful listening, unexpected discovery, and music that stays with you.</p>
+                    <div class="room-titles">
+                        <p>The Listening Room</p>
+                        <p>The Gallery</p>
+                        <p>On Air</p>
+                    </div>
+                    <p class="small-label">A SPACE FOR THE SONICALLY CURIOUS<br>CURATED WITH INTENTION</p>
+                </section>
+                <section class="specimen ink" aria-labelledby="c-ink-label">
+                    <h3 class="swatch-label" id="c-ink-label">Ink / #111311</h3>
+                    <p class="wordmark">MANI'S ROOM</p>
+                    <nav class="sample-nav" aria-label="System C, ink sample navigation">
+                        <a href="index.html">Home</a>
+                        <a href="listening.html">The Listening Room</a>
+                        <a href="gallery.html">The Gallery</a>
+                        <a href="radio.html">On Air</a>
+                    </nav>
+                    <p class="welcome">Come in. <span>Stay awhile.</span></p>
+                    <p class="copy">Welcome to Mani's Room — a place for thoughtful listening, unexpected discovery, and music that stays with you.</p>
+                    <div class="room-titles">
+                        <p>The Listening Room</p>
+                        <p>The Gallery</p>
+                        <p>On Air</p>
+                    </div>
+                    <p class="small-label">A SPACE FOR THE SONICALLY CURIOUS<br>CURATED WITH INTENTION</p>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="study-footer">
+        <p>Comparison notes: look at the room names first, then read the paragraph. Consider the welcome's tone, the wordmark's character, and comfort at small sizes. Navigation samples link to the existing rooms; their underline demonstrates emphasis, not the current page.</p>
+        <a href="index.html">Return to Mani's Room</a>
+    </footer>
+</body>
+</html>
