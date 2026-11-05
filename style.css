@@ -95,7 +95,7 @@ h1 em {
 }
 
 .button:hover {
-  background: #A16B75;
+  background: #9C6670;
 }
 
 .about {
@@ -156,3 +156,13 @@ footer {
   }
 }
 
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button {
+    transition: none;
+  }
+}
