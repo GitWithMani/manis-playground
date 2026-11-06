@@ -1,6 +1,6 @@
 /* Self-contained entrance: no access to the carousel or Apple Music player. */
 (() => {
-  const entrance = document.querySelector('.room-listening .listening-entrance');
+  const entrance = document.querySelector('.home-page .home-entrance');
   if (!entrance) return;
   const scene = entrance.querySelector('.entrance-scene');
   const replay = entrance.querySelector('.entrance-replay');
@@ -74,3 +74,4 @@
   window.addEventListener('pagehide', closeSound);
   replayVisual(); // One silent opening; no loop or automatic sound.
 })();
+
