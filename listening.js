@@ -105,12 +105,15 @@
       status.textContent = `Selected: ${title}. Start playback in the player.`;
       selections.forEach(choice => {
         choice.setAttribute('aria-pressed', String(choice === button));
-        choice.closest('.playlist-card').classList.toggle('is-selected', choice === button);
+        const card = choice.closest('.playlist-card');
+        card.classList.toggle('is-selected', choice === button);
+        if (choice === button) card.classList.toggle('has-selection', true);
       });
       // Keep focus on the selecting button; native buttons support Enter/Space.
     });
   });
 })();
+
 
 
 

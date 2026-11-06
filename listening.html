@@ -51,7 +51,7 @@
             <p class="collection-note" id="playlist-help">Choose Listen here to load the player below, or open a playlist in Apple Music. Swipe or scroll horizontally; when the collection is focused, use the left and right arrow keys.</p>
             <div class="playlist-track" id="playlist-track" role="region" aria-label="Curated Apple Music playlists" aria-describedby="playlist-help" tabindex="0">
                 <ul class="playlist-list">
-                <li class="playlist-card is-selected">
+                <li class="playlist-card">
                     <a class="playlist-link" href="https://music.apple.com/us/playlist/donell-vs-joe/pl.u-38oWoGetd31Eaz" target="_blank" rel="noopener noreferrer">
                         <span class="sleeve-jacket" aria-hidden="true">
                             <span class="playlist-cover has-artwork">
@@ -61,7 +61,7 @@
                         <h3>Donell vs Joe</h3>
                         <span class="playlist-destination">Open in Apple Music <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></span>
                     </a>
-                    <button type="button" class="playlist-select" data-embed-url="https://embed.music.apple.com/us/playlist/donell-vs-joe/pl.u-38oWoGetd31Eaz" data-playlist-title="Donell vs Joe" aria-controls="featured-player" aria-pressed="true" hidden>Listen here<span class="visually-hidden">: Donell vs Joe</span></button>
+                    <button type="button" class="playlist-select" data-embed-url="https://embed.music.apple.com/us/playlist/donell-vs-joe/pl.u-38oWoGetd31Eaz" data-playlist-title="Donell vs Joe" aria-controls="featured-player" aria-pressed="false" hidden>Listen here<span class="visually-hidden">: Donell vs Joe</span></button>
                 </li>
                 <li class="playlist-card">
                     <a class="playlist-link" href="https://music.apple.com/us/playlist/where-ma-girls-at/pl.u-JPAZobVIEXvzKV" target="_blank" rel="noopener noreferrer">
@@ -93,7 +93,7 @@
         <section class="featured-playlist" aria-labelledby="featured-heading">
             <p class="room-label">LISTEN HERE</p>
             <h2 id="featured-heading">Donell vs Joe</h2>
-            <p class="player-status" role="status" aria-live="polite">Selected: Donell vs Joe. Start playback in the player.</p>
+            <p class="player-status" role="status" aria-live="polite">Player ready: Donell vs Joe. Choose a sleeve to pull out a record.</p>
             <iframe id="featured-player"
                     src="https://embed.music.apple.com/us/playlist/donell-vs-joe/pl.u-38oWoGetd31Eaz"
                     title="Apple Music playlist: Donell vs Joe"
@@ -110,6 +110,7 @@
     </footer>
 </body>
 </html>
+
 
 
 

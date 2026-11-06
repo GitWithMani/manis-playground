@@ -726,8 +726,10 @@ a:focus-visible {
 .room-listening .sleeve-jacket {
   position: relative;
   display: block;
-  margin-right: 12%;
+  margin-right: 38%;
   isolation: isolate;
+  transform: translateZ(0);
+  transition: transform 300ms ease-out;
 }
 
 /* Reserve room after the final card for its extended record edge. */
@@ -741,10 +743,10 @@ a:focus-visible {
   content: "";
   display: block;
   position: absolute;
-  top: 27.5%;
-  left: 49%;
-  width: 45%;
-  height: 45%;
+  top: 3%;
+  left: 3%;
+  width: 94%;
+  height: 94%;
   border-radius: 50%;
   /* Concentric layers: spindle hole, muted-brass paper label, quiet grooves. */
   background:
@@ -760,12 +762,12 @@ a:focus-visible {
   box-shadow: inset 0 0 0 1px #303A32;
   pointer-events: none;
   transform: translateX(0);
-  transition: transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .room-listening .playlist-card.is-selected .sleeve-jacket::before {
-  /* Keep the exact pixel travel with the smaller disc: .336 × .45 = .18 × .84. */
-  transform: translateX(calc(33.6% + 16px));
+  transform: translateX(68%);
+  transition-duration: 850ms;
 }
 
 .room-listening .playlist-cover {
@@ -895,8 +897,87 @@ a:focus-visible {
 }
 
 
-/* Reveal the record through the unused sides of the portrait-oriented art.
-   The image dimensions, square frames, and artwork remain unchanged. */
+/* Opaque square sleeves hide the full LP at rest; art remains contain-fit. */
 .room-listening .playlist-cover.has-artwork {
-  background: transparent;
+  background: #111311;
+}
+
+
+
+/* A stable card footprint reserves space for a full LP reveal. */
+.room-listening .playlist-card {
+  position: relative;
+  perspective: 1000px;
+}
+
+.room-listening .playlist-track {
+  padding-top: 20px;
+  padding-bottom: 32px;
+}
+
+/* Padding gives a reliable 1:1 frame even in older Safari. */
+.room-listening .playlist-cover.has-artwork {
+  position: relative;
+  height: 0;
+  padding: 100% 0 0;
+  aspect-ratio: auto;
+  z-index: 1;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 300ms ease-out;
+}
+
+.room-listening .sleeve-jacket::before {
+  z-index: 0;
+}
+
+.room-listening .playlist-card:focus-within .sleeve-jacket {
+  transform: translateY(-2px) translateZ(8px) rotateY(-2deg);
+}
+
+.room-listening .playlist-card:focus-within .playlist-cover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+.room-listening .playlist-card:not(.is-selected):focus-within .sleeve-jacket::before {
+  transform: translateX(8%);
+}
+
+/* Avoid sticky emulated hover on touch devices. */
+@media (hover: hover) and (pointer: fine) {
+  .room-listening .playlist-card:hover .sleeve-jacket {
+    transform: translateY(-2px) translateZ(8px) rotateY(-2deg);
+  }
+  .room-listening .playlist-card:hover .playlist-cover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+  }
+  .room-listening .playlist-card:not(.is-selected):hover .sleeve-jacket::before {
+    transform: translateX(8%);
+  }
+}
+
+.room-listening .playlist-card.is-selected .sleeve-jacket {
+  transform: translateY(-3px) translateZ(10px) rotateY(-2deg);
+}
+
+.room-listening .playlist-card.is-selected .playlist-cover {
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Remember prior selection so its LP also retracts slowly. */
+.room-listening .playlist-card.has-selection .sleeve-jacket::before {
+  transition-duration: 850ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-listening .playlist-card .sleeve-jacket,
+  .room-listening .playlist-card.is-selected .sleeve-jacket,
+  .room-listening .playlist-card:focus-within .sleeve-jacket,
+  .room-listening .playlist-card:hover .sleeve-jacket {
+    transform: none;
+    transition: none;
+  }
+  .room-listening .playlist-card .sleeve-jacket::before,
+  .room-listening .playlist-card .playlist-cover {
+    transition: none;
+  }
 }
