@@ -1,0 +1,76 @@
+/* The entrance is independent of every carousel and sleeve selector. */
+.room-listening .listening-entrance {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 40px;
+  max-width: 1040px;
+  margin-bottom: 64px;
+  padding: 32px;
+  background: #0B1C17;
+  color: var(--cream);
+}
+.room-listening .entrance-label,
+.room-listening .entrance-link,
+.room-listening .entrance-controls button,
+.room-listening .entrance-status,
+.room-listening .entrance-scene figcaption {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.room-listening .entrance-label { color: var(--brass); letter-spacing: 1.5px; }
+.room-listening .entrance-invitation {
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.15;
+  margin: 20px 0;
+}
+.room-listening .entrance-note { font-size: 21px; line-height: 1.7; }
+.room-listening .entrance-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--cream);
+  text-underline-offset: 6px;
+  text-decoration-color: var(--brass);
+}
+.room-listening .entrance-link span { margin-left: 14px; color: var(--brass); }
+.room-listening .entrance-controls { margin-top: 16px; }
+.room-listening .entrance-controls button {
+  min-height: 44px;
+  margin: 0 12px 12px 0;
+  padding: 8px 12px;
+  border: 1px solid var(--brass);
+  color: var(--cream);
+  background: transparent;
+  cursor: pointer;
+}
+.room-listening .entrance-controls button[hidden] { display: none; }
+.room-listening .entrance-controls button:hover { background: var(--cream); color: var(--espresso); }
+.room-listening .entrance-link:focus,
+.room-listening .entrance-controls button:focus { outline: 2px solid var(--cream); outline-offset: 4px; }
+.room-listening .entrance-status { margin: 0; max-width: 40ch; }
+.room-listening .entrance-scene { min-width: 0; margin: 0; }
+.room-listening .entrance-turntable {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.2));
+}
+.room-listening .entrance-scene figcaption { color: var(--brass); margin-top: 12px; }
+.room-listening .entrance-tonearm { transform-origin: 310px 63px; }
+.room-listening .entrance-playing .entrance-tonearm { animation: entrance-needle-drop 1800ms ease-in-out both; }
+@keyframes entrance-needle-drop {
+  0%, 12% { transform: rotate(-24deg); }
+  70%, 100% { transform: rotate(0); }
+}
+@media (max-width: 800px) {
+  .room-listening .listening-entrance { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 24px; margin-bottom: 40px; }
+  .room-listening .entrance-scene { max-width: 480px; width: 100%; justify-self: center; }
+}
+@media (max-width: 400px) {
+  .room-listening .listening-entrance { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .room-listening .entrance-playing .entrance-tonearm { animation: none; }
+}
