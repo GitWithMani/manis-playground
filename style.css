@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap');
 
 
@@ -371,19 +369,18 @@ a:focus-visible {
     min-height: 240px;
   }
 }
-.home-script {
+.home-subheading {
   display: block;
-  font-family: "Great Vibes", cursive;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(2.25rem, 4.5vw, 3.5rem);
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0;
-  word-spacing: 6px;
   line-height: 1.6;
   color: var(--cream);
 }
 .hero h1 {
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
   letter-spacing: -1px;
 }
@@ -729,27 +726,48 @@ a:focus-visible {
 .room-listening .sleeve-jacket {
   position: relative;
   display: block;
-  margin-right: 12%;
+  margin-right: 38%;
   isolation: isolate;
+  transform: translateZ(0);
+  transition: transform 300ms ease-out;
 }
 
-/* The static disc belongs to the selected playlist, never to the artwork. */
+/* Reserve room after the final card for its extended record edge. */
+.room-listening .playlist-list::after {
+  content: "";
+  flex: 0 0 24px;
+}
+
+/* The disc slides behind the sleeve; the artwork itself never moves. */
 .room-listening .sleeve-jacket::before {
   content: "";
-  display: none;
+  display: block;
   position: absolute;
-  top: 8%;
-  left: 28%;
-  width: 84%;
-  height: 84%;
+  top: 3%;
+  left: 3%;
+  width: 94%;
+  height: 94%;
   border-radius: 50%;
-  background: #080C0A;
-  box-shadow: inset 0 0 0 1px #303A32, inset 0 0 0 5px #101812;
+  /* Concentric layers: spindle hole, muted-brass paper label, quiet grooves. */
+  background:
+    radial-gradient(circle at center,
+      #102822 0 2px,
+      #8F805C 2.5px 14%,
+      #080C0A 14.5% 23%,
+      transparent 23.5%),
+    repeating-radial-gradient(circle at center,
+      #080C0A 0 4px,
+      #202720 4.5px 5px,
+      #080C0A 5.5px 9px);
+  box-shadow: inset 0 0 0 1px #303A32;
   pointer-events: none;
+  transform: translateX(0);
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .room-listening .playlist-card.is-selected .sleeve-jacket::before {
-  display: block;
+  transform: translateX(68%);
+  transition-duration: 850ms;
 }
 
 .room-listening .playlist-cover {
@@ -793,5 +811,173 @@ a:focus-visible {
   .room-listening .playlist-cover img {
     position: absolute;
     inset: 0;
+  }
+}
+
+
+
+/* Listening Room welcome: original portrait alongside the introduction. */
+.room-listening .listening-welcome {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 48px;
+  max-width: 1040px;
+  margin-bottom: 56px;
+}
+
+.room-listening .listening-welcome .room-intro {
+  margin-bottom: 0;
+}
+
+.room-listening .listening-portrait {
+  width: 100%;
+  max-width: 320px;
+  margin: 0;
+  justify-self: end;
+}
+
+.room-listening .listening-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The supplied covers are portrait-oriented: show the complete image. */
+.room-listening .playlist-cover.has-artwork {
+  display: block;
+  overflow: hidden;
+}
+
+.room-listening .playlist-cover.has-artwork img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .room-listening .listening-welcome {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .room-listening .listening-portrait {
+    justify-self: center;
+  }
+}
+
+
+
+/* Arrow easing is handled in JS; native touch/trackpad scrolling stays native. */
+.room-listening .playlist-track {
+  scroll-behavior: auto;
+}
+
+/* Frame the unmodified official player in a quiet, deeper forest surface. */
+.room-listening .featured-playlist {
+  max-width: 708px;
+  padding: 24px;
+  background: #0D211C;
+}
+
+@media (max-width: 600px) {
+  .room-listening .featured-playlist {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-listening .sleeve-jacket::before {
+    transition: none;
+  }
+}
+
+
+/* Opaque square sleeves hide the full LP at rest; art remains contain-fit. */
+.room-listening .playlist-cover.has-artwork {
+  background: #111311;
+}
+
+
+
+/* A stable card footprint reserves space for a full LP reveal. */
+.room-listening .playlist-card {
+  position: relative;
+  perspective: 1000px;
+}
+
+.room-listening .playlist-track {
+  padding-top: 20px;
+  padding-bottom: 32px;
+}
+
+/* Padding gives a reliable 1:1 frame even in older Safari. */
+.room-listening .playlist-cover.has-artwork {
+  position: relative;
+  height: 0;
+  padding: 100% 0 0;
+  aspect-ratio: auto;
+  z-index: 1;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 300ms ease-out;
+}
+
+.room-listening .sleeve-jacket::before {
+  z-index: 0;
+}
+
+.room-listening .playlist-card:focus-within .sleeve-jacket {
+  transform: translateY(-2px) translateZ(8px) rotateY(-2deg);
+}
+
+.room-listening .playlist-card:focus-within .playlist-cover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+.room-listening .playlist-card:not(.is-selected):focus-within .sleeve-jacket::before {
+  transform: translateX(calc(8% + 14px));
+}
+
+/* Avoid sticky emulated hover on touch devices. */
+@media (hover: hover) and (pointer: fine) {
+  .room-listening .playlist-card:hover .sleeve-jacket {
+    transform: translateY(-2px) translateZ(8px) rotateY(-2deg);
+  }
+  .room-listening .playlist-card:hover .playlist-cover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+  }
+  .room-listening .playlist-card:not(.is-selected):hover .sleeve-jacket::before {
+    transform: translateX(calc(8% + 14px));
+  }
+}
+
+.room-listening .playlist-card.is-selected .sleeve-jacket {
+  transform: translateY(-3px) translateZ(10px) rotateY(-2deg);
+}
+
+.room-listening .playlist-card.is-selected .playlist-cover {
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Remember prior selection so its LP also retracts slowly. */
+.room-listening .playlist-card.has-selection .sleeve-jacket::before {
+  transition-duration: 850ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-listening .playlist-card .sleeve-jacket,
+  .room-listening .playlist-card.is-selected .sleeve-jacket,
+  .room-listening .playlist-card:focus-within .sleeve-jacket,
+  .room-listening .playlist-card:hover .sleeve-jacket {
+    transform: none;
+    transition: none;
+  }
+  .room-listening .playlist-card .sleeve-jacket::before,
+  .room-listening .playlist-card .playlist-cover {
+    transition: none;
   }
 }
