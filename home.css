@@ -1,0 +1,282 @@
+/* Home only: shared navigation, room styles and player code stay in style.css. */
+.home-page .lounge-home {
+  background: var(--espresso);
+  overflow-wrap: break-word;
+}
+
+.home-page .lounge-hero,
+.home-page .lounge-welcome,
+.home-page .lounge-listening,
+.home-page .lounge-gallery,
+.home-page .lounge-radio {
+  width: 84%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-page .lounge-label,
+.home-page .lounge-link,
+.home-page figcaption {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.home-page .lounge-label {
+  color: var(--brass);
+  letter-spacing: 1.6px;
+  margin: 0 0 24px;
+}
+
+.home-page .lounge-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  padding: 64px 0 48px;
+}
+
+.home-page .lounge-invitation {
+  padding-bottom: 56px;
+}
+
+.home-page .lounge-hero h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  color: var(--cream);
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(64px, 8.5vw, 120px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin: 0 0 32px;
+}
+
+.home-page .lounge-hero h1 span {
+  display: block;
+  font-size: 0.57em;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  margin-top: 8px;
+}
+
+.home-page .lounge-intro {
+  color: var(--cream);
+  font-size: 21px;
+  line-height: 1.7;
+  margin: 0 0 24px;
+}
+
+.home-page .lounge-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 0;
+  color: var(--cream);
+  text-decoration: underline;
+  text-decoration-color: var(--brass);
+  text-underline-offset: 7px;
+}
+
+.home-page .lounge-link span {
+  margin-left: 12px;
+  color: var(--brass);
+}
+
+.home-page .lounge-link:hover {
+  color: var(--brass);
+}
+
+.home-page .lounge-portrait {
+  width: 100%;
+  max-width: 440px;
+  margin: 32px 0 0;
+  justify-self: end;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+}
+
+.home-page .lounge-home img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.home-page .lounge-home h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(38px, 4.4vw, 64px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+  margin: 0 0 24px;
+}
+
+.home-page .lounge-welcome {
+  max-width: 740px;
+  padding: 40px 0 80px;
+}
+
+.home-page .lounge-welcome > p:last-child,
+.home-page .lounge-room-copy > p:not(.lounge-label) {
+  max-width: 46ch;
+  font-size: 21px;
+  line-height: 1.75;
+  margin: 0 0 24px;
+}
+
+.home-page .lounge-listening {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(32px, 7vw, 100px);
+  padding: 56px clamp(24px, 4vw, 56px);
+  background: var(--espresso);
+  color: var(--cream);
+}
+
+.home-page .lounge-sleeve {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.home-page .lounge-sleeve a {
+  display: block;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 220ms ease-out, box-shadow 220ms ease-out;
+}
+
+.home-page .lounge-sleeve a:hover,
+.home-page .lounge-sleeve a:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.25);
+}
+
+.home-page figcaption {
+  color: var(--brass);
+  font-size: 11px;
+  margin-top: 16px;
+}
+
+.home-page .lounge-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 6vw, 88px);
+  align-items: center;
+  padding: 96px 0;
+}
+
+.home-page .lounge-city {
+  margin: 0;
+}
+
+.home-page .lounge-radio {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(24px, 6vw, 88px);
+  align-items: start;
+  padding: 40px 0 72px;
+}
+
+.home-page .lounge-radio h2 {
+  font-size: clamp(56px, 7vw, 96px);
+}
+
+/* A visible focus fallback also supports older Safari. */
+.home-page .lounge-home a:focus {
+  outline: 2px solid var(--cream);
+  outline-offset: 5px;
+}
+
+@media (max-width: 840px) {
+  .home-page .lounge-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 24px;
+    padding-top: 40px;
+  }
+  .home-page .lounge-invitation { padding-bottom: 0; }
+  .home-page .lounge-hero h1 { font-size: clamp(48px, 8vw, 72px); }
+  .home-page .lounge-listening,
+  .home-page .lounge-gallery { gap: 32px; }
+  .home-page .lounge-listening { padding: 32px 24px; }
+}
+
+@media (max-width: 600px) {
+  .home-page .lounge-hero,
+  .home-page .lounge-welcome,
+  .home-page .lounge-listening,
+  .home-page .lounge-gallery,
+  .home-page .lounge-radio { width: 88%; }
+
+  .home-page .lounge-hero,
+  .home-page .lounge-listening,
+  .home-page .lounge-gallery,
+  .home-page .lounge-radio { grid-template-columns: minmax(0, 1fr); }
+
+  .home-page .lounge-hero { gap: 28px; padding-bottom: 24px; }
+  .home-page .lounge-hero h1 { font-size: clamp(56px, 12vw, 72px); }
+  .home-page .lounge-portrait { max-width: 360px; margin-top: 0; justify-self: center; }
+  .home-page .lounge-welcome { padding: 28px 0 48px; }
+  .home-page .lounge-listening { padding: 32px 20px; }
+  .home-page .lounge-sleeve { max-width: 240px; }
+  .home-page .lounge-gallery { padding: 56px 0; gap: 24px; }
+  .home-page .lounge-radio { gap: 8px; padding: 16px 0 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .lounge-sleeve a { transition: none; }
+  .home-page .lounge-sleeve a:hover,
+  .home-page .lounge-sleeve a:focus { transform: none; }
+}
+
+
+
+/* A single prominent invitation; other editorial links stay as text. */
+.home-page .lounge-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  max-width: 100%;
+  padding: 14px 22px;
+  background: var(--brass);
+  color: var(--espresso);
+  border: 1px solid var(--brass);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 200ms ease-out, border-color 200ms ease-out;
+}
+
+.home-page .lounge-cta:hover,
+.home-page .lounge-cta:focus {
+  background: var(--cream);
+  border-color: var(--cream);
+}
+
+/* Content is visible by default. JS animates only on first intersection. */
+.home-page .lounge-home {
+  --home-reveal-distance: 16px;
+  --home-reveal-duration: 600ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .lounge-cta {
+    transition: none;
+  }
+}
+
+
+/* One continuous forest surface: spacing and type distinguish the rooms. */
+.home-page,
+.home-page .site-header,
+.home-page .lounge-hero,
+.home-page .lounge-welcome,
+.home-page .lounge-gallery,
+.home-page .lounge-radio,
+.home-page footer {
+  background: var(--espresso);
+}
