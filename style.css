@@ -939,7 +939,7 @@ a:focus-visible {
 }
 
 .room-listening .playlist-card:not(.is-selected):focus-within .sleeve-jacket::before {
-  transform: translateX(8%);
+  transform: translateX(calc(8% + 14px));
 }
 
 /* Avoid sticky emulated hover on touch devices. */
@@ -951,7 +951,7 @@ a:focus-visible {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
   }
   .room-listening .playlist-card:not(.is-selected):hover .sleeve-jacket::before {
-    transform: translateX(8%);
+    transform: translateX(calc(8% + 14px));
   }
 }
 
