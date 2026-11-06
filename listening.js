@@ -16,9 +16,50 @@
     next.disabled = track.scrollLeft >= end - 2;
   }
 
-  function goTo(left) {
-    track.scrollTo({ left, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+  let scrollFrame = null;
+  let savedSnap = '';
+
+  function stopGlide() {
+    if (scrollFrame === null) return;
+    cancelAnimationFrame(scrollFrame);
+    scrollFrame = null;
+    track.style.scrollSnapType = savedSnap;
   }
+
+  function goTo(left) {
+    stopGlide();
+    const destination = Math.max(0, Math.min(left, track.scrollWidth - track.clientWidth));
+    if (reducedMotion.matches) {
+      track.scrollTo({ left: destination, behavior: 'auto' });
+      return;
+    }
+    const start = track.scrollLeft;
+    const started = performance.now();
+    savedSnap = track.style.scrollSnapType;
+    // Avoid snap fighting the easing; restore normal snapping at the end.
+    track.style.scrollSnapType = 'none';
+    function step(now) {
+      const progress = Math.min(1, (now - started) / 500);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      track.scrollLeft = start + (destination - start) * eased;
+      if (progress < 1) scrollFrame = requestAnimationFrame(step);
+      else {
+        track.scrollLeft = destination;
+        track.style.scrollSnapType = savedSnap;
+        scrollFrame = null;
+        updateControls();
+      }
+    }
+    scrollFrame = requestAnimationFrame(step);
+  }
+
+  // A hand gesture always takes over from an arrow glide immediately.
+  ['pointerdown', 'touchstart', 'wheel'].forEach(name => {
+    track.addEventListener(name, stopGlide, { passive: true });
+  });
+  if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', stopGlide);
+  else if (reducedMotion.addListener) reducedMotion.addListener(stopGlide);
+  window.addEventListener('resize', stopGlide);
 
   function move(direction) {
     // Measure real card positions, including responsive widths and gaps.
@@ -70,5 +111,6 @@
     });
   });
 })();
+
 
 
