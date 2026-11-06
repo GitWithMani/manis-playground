@@ -25,10 +25,17 @@
     </header>
 
     <main id="main-content" class="room room--listening" tabindex="-1">
-        <div class="room-intro">
-            <p class="room-label">MUSIC / DISCOVERY</p>
-            <h1>The Listening<br>Room</h1>
-            <p class="room-description">A place for the music I want to share, and the discoveries still to come. Take your time here.</p>
+        <div class="listening-welcome">
+            <div class="room-intro">
+                <p class="room-label">MUSIC / DISCOVERY</p>
+                <h1>The Listening<br>Room</h1>
+                <p class="room-description">A place for the music I want to share, and the discoveries still to come. Take your time here.</p>
+            </div>
+            <figure class="listening-portrait">
+                <img src="images/mani-brooklyn-bridge.jpg"
+                     alt="Mani in glasses and a rust-colored coat near the Brooklyn Bridge"
+                     width="724" height="1086" decoding="async">
+            </figure>
         </div>
         <section class="playlist-collection" aria-labelledby="playlist-heading">
             <div class="collection-heading">
@@ -46,20 +53,22 @@
                 <ul class="playlist-list">
                 <li class="playlist-card">
                     <a class="playlist-link" href="https://music.apple.com/us/playlist/donell-vs-joe/pl.u-38oWoGetd31Eaz" target="_blank" rel="noopener noreferrer">
-                        <span class="playlist-cover" aria-hidden="true">
-                            <span class="sleeve-number">01 / MANI'S ROOM</span>
-                            <span class="sleeve-title">Donell vs Joe</span>
+                        <span class="sleeve-jacket" aria-hidden="true">
+                            <span class="playlist-cover has-artwork">
+                                <img src="images/donell-vs-joe.jpg" alt="" width="399" height="501" loading="lazy" decoding="async">
+                            </span>
                         </span>
                         <h3>Donell vs Joe</h3>
                         <span class="playlist-destination">Open in Apple Music <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></span>
                     </a>
-                    <button type="button" class="playlist-select" data-embed-url="https://embed.music.apple.com/us/playlist/donell-vs-joe/pl.u-38oWoGetd31Eaz" data-playlist-title="Donell vs Joe" aria-controls="featured-player" aria-pressed="true" hidden>Listen here<span class="visually-hidden">: Donell vs Joe</span></button>
+                    <button type="button" class="playlist-select" data-embed-url="https://embed.music.apple.com/us/playlist/donell-vs-joe/pl.u-38oWoGetd31Eaz" data-playlist-title="Donell vs Joe" aria-controls="featured-player" aria-pressed="false" hidden>Listen here<span class="visually-hidden">: Donell vs Joe</span></button>
                 </li>
                 <li class="playlist-card">
                     <a class="playlist-link" href="https://music.apple.com/us/playlist/where-ma-girls-at/pl.u-JPAZobVIEXvzKV" target="_blank" rel="noopener noreferrer">
-                        <span class="playlist-cover" aria-hidden="true">
-                            <span class="sleeve-number">02 / MANI'S ROOM</span>
-                            <span class="sleeve-title">Where Ma Girls At</span>
+                        <span class="sleeve-jacket" aria-hidden="true">
+                            <span class="playlist-cover has-artwork">
+                                <img src="images/where-ma-girls-at.jpg.jpg" alt="" width="675" height="1200" loading="lazy" decoding="async">
+                            </span>
                         </span>
                         <h3>Where Ma Girls At</h3>
                         <span class="playlist-destination">Open in Apple Music <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></span>
@@ -68,9 +77,10 @@
                 </li>
                 <li class="playlist-card">
                     <a class="playlist-link" href="https://music.apple.com/us/playlist/for-pat/pl.u-V9D7okatEq0Ab9" target="_blank" rel="noopener noreferrer">
-                        <span class="playlist-cover" aria-hidden="true">
-                            <span class="sleeve-number">03 / MANI'S ROOM</span>
-                            <span class="sleeve-title">For Pat</span>
+                        <span class="sleeve-jacket" aria-hidden="true">
+                            <span class="playlist-cover has-artwork">
+                                <img src="images/for-pat.jpg.jpeg" alt="" width="640" height="1136" loading="lazy" decoding="async">
+                            </span>
                         </span>
                         <h3>For Pat</h3>
                         <span class="playlist-destination">Open in Apple Music <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></span>
@@ -83,7 +93,7 @@
         <section class="featured-playlist" aria-labelledby="featured-heading">
             <p class="room-label">LISTEN HERE</p>
             <h2 id="featured-heading">Donell vs Joe</h2>
-            <p class="player-status" role="status" aria-live="polite">Selected: Donell vs Joe. Start playback in the player.</p>
+            <p class="player-status" role="status" aria-live="polite">Player ready: Donell vs Joe. Choose a sleeve to pull out a record.</p>
             <iframe id="featured-player"
                     src="https://embed.music.apple.com/us/playlist/donell-vs-joe/pl.u-38oWoGetd31Eaz"
                     title="Apple Music playlist: Donell vs Joe"
@@ -100,6 +110,9 @@
     </footer>
 </body>
 </html>
+
+
+
 
 
 
