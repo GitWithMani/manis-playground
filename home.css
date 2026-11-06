@@ -1,6 +1,6 @@
 /* Home only: shared navigation, room styles and player code stay in style.css. */
 .home-page .lounge-home {
-  background: radial-gradient(ellipse at 15% 16%, rgba(197, 164, 109, 0.055), transparent 55%), var(--espresso);
+  background: var(--espresso);
   overflow-wrap: break-word;
 }
 
@@ -130,8 +130,8 @@
   align-items: center;
   gap: clamp(32px, 7vw, 100px);
   padding: 56px clamp(24px, 4vw, 56px);
-  background: var(--cream);
-  color: var(--espresso);
+  background: var(--espresso);
+  color: var(--cream);
 }
 
 .home-page .lounge-sleeve {
@@ -257,26 +257,6 @@
   border-color: var(--cream);
 }
 
-/* Darker warm accents remain legible on the cream listening invitation. */
-.home-page .lounge-listening .lounge-label,
-.home-page .lounge-listening figcaption,
-.home-page .lounge-listening .lounge-link span {
-  color: #705132;
-}
-
-.home-page .lounge-listening .lounge-link {
-  color: var(--espresso);
-  text-decoration-color: #705132;
-}
-
-.home-page .lounge-listening .lounge-link:hover {
-  color: #705132;
-}
-
-.home-page .lounge-listening a:focus {
-  outline-color: var(--espresso);
-}
-
 /* Content is visible by default. JS animates only on first intersection. */
 .home-page .lounge-home {
   --home-reveal-distance: 16px;
@@ -287,4 +267,16 @@
   .home-page .lounge-cta {
     transition: none;
   }
+}
+
+
+/* One continuous forest surface: spacing and type distinguish the rooms. */
+.home-page,
+.home-page .site-header,
+.home-page .lounge-hero,
+.home-page .lounge-welcome,
+.home-page .lounge-gallery,
+.home-page .lounge-radio,
+.home-page footer {
+  background: var(--espresso);
 }
