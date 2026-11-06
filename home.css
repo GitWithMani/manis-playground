@@ -130,7 +130,8 @@
   align-items: center;
   gap: clamp(32px, 7vw, 100px);
   padding: 56px clamp(24px, 4vw, 56px);
-  background: #102822;
+  background: var(--cream);
+  color: var(--espresso);
 }
 
 .home-page .lounge-sleeve {
@@ -226,4 +227,64 @@
   .home-page .lounge-sleeve a { transition: none; }
   .home-page .lounge-sleeve a:hover,
   .home-page .lounge-sleeve a:focus { transform: none; }
+}
+
+
+
+/* A single prominent invitation; other editorial links stay as text. */
+.home-page .lounge-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  max-width: 100%;
+  padding: 14px 22px;
+  background: var(--brass);
+  color: var(--espresso);
+  border: 1px solid var(--brass);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 200ms ease-out, border-color 200ms ease-out;
+}
+
+.home-page .lounge-cta:hover,
+.home-page .lounge-cta:focus {
+  background: var(--cream);
+  border-color: var(--cream);
+}
+
+/* Darker warm accents remain legible on the cream listening invitation. */
+.home-page .lounge-listening .lounge-label,
+.home-page .lounge-listening figcaption,
+.home-page .lounge-listening .lounge-link span {
+  color: #705132;
+}
+
+.home-page .lounge-listening .lounge-link {
+  color: var(--espresso);
+  text-decoration-color: #705132;
+}
+
+.home-page .lounge-listening .lounge-link:hover {
+  color: #705132;
+}
+
+.home-page .lounge-listening a:focus {
+  outline-color: var(--espresso);
+}
+
+/* Content is visible by default. JS animates only on first intersection. */
+.home-page .lounge-home {
+  --home-reveal-distance: 16px;
+  --home-reveal-duration: 600ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .lounge-cta {
+    transition: none;
+  }
 }
