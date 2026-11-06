@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mani's Room | Come In. Stay Awhile.</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body class="home-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -23,34 +24,66 @@
         </nav>
     </header>
 
-    <main id="main-content" tabindex="-1">
-        <section class="hero">
-            <p class="eyebrow"> A SPACE FOR THE SONICALLY CURIOUS</p>
-            <h1>
-  Come In...
-  <span class="home-subheading">Stay awhile</span>
-</h1>
-            <p class="intro">
-                A little soul. A little discovery.
-                A whole lot of feeling.
-            </p>
-
-            <figure class="hero-photo">
+    <main id="main-content" class="lounge-home" tabindex="-1">
+        <section class="lounge-hero" aria-labelledby="invitation-heading">
+            <div class="lounge-invitation">
+                <p class="lounge-label">A SPACE FOR THE SONICALLY CURIOUS</p>
+                <h1 id="invitation-heading">Come In...<span>Stay awhile</span></h1>
+                <p class="lounge-intro">A little soul. A little discovery.<br>A whole lot of feeling.</p>
+                <a class="lounge-link" href="listening.html">Enter the Listening Room <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="lounge-portrait">
                 <img src="images/manihair2018.jpeg"
                      alt="Mani photographed in profile under pink and purple lighting"
-                     width="793" height="991">
+                     width="793" height="991" fetchpriority="high">
             </figure>
         </section>
 
-        <section id="about" class="about">
-            <p> 01 / THE INTRODUCTION </p>
-            <h2>Good music lives here.</h2>
-            <p>
-                Welcome to Mani's Room - a place for
-                thoughtful listening, unexpected discovery,
-                and music that stays with you.
-            </p>
-            <a href="listening.html" class="button">ENTER THE LISTENING ROOM</a>
+        <section class="lounge-welcome" aria-labelledby="welcome-heading">
+            <p class="lounge-label">01 / THE INTRODUCTION</p>
+            <h2 id="welcome-heading">Good music lives here.</h2>
+            <p>Welcome to Mani's Room — a place for thoughtful listening, unexpected discovery, and music that stays with you.</p>
+        </section>
+
+        <section class="lounge-listening" aria-labelledby="listening-heading">
+            <figure class="lounge-sleeve">
+                <a href="listening.html" aria-label="Explore the Listening Room">
+                    <img src="images/donell-vs-joe.jpg" alt="Donell Jones and Joe playlist artwork"
+                         width="399" height="501" loading="lazy" decoding="async">
+                </a>
+                <figcaption>Donell vs Joe / from the Listening Room</figcaption>
+            </figure>
+            <div class="lounge-room-copy">
+                <p class="lounge-label">02 / PULL UP A CHAIR</p>
+                <h2 id="listening-heading">The Listening Room</h2>
+                <p>Music to spend time with. Explore my playlists, find a familiar voice, or hear something new.</p>
+                <a class="lounge-link" href="listening.html">Browse the collection <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+
+        <section class="lounge-gallery" aria-labelledby="gallery-heading">
+            <div class="lounge-room-copy">
+                <p class="lounge-label">03 / A PLACE FOR PICTURES</p>
+                <h2 id="gallery-heading">The Gallery</h2>
+                <p>A room for photography and visual memories. The collection is still to come.</p>
+                <a class="lounge-link" href="gallery.html">Visit the Gallery <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="lounge-city">
+                <img src="images/nycduskskyline.jpeg"
+                     alt="New York skyline across the water at dusk, with lamps glowing in the foreground"
+                     width="1086" height="724" loading="lazy" decoding="async">
+            </figure>
+        </section>
+
+        <section class="lounge-radio" aria-labelledby="radio-heading">
+            <div>
+                <p class="lounge-label">04 / FORTHCOMING</p>
+                <h2 id="radio-heading">On Air</h2>
+            </div>
+            <div class="lounge-room-copy">
+                <p>A future room for radio. No broadcast yet; there is time to settle in.</p>
+                <a class="lounge-link" href="radio.html">Step into On Air <span aria-hidden="true">↗</span></a>
+            </div>
         </section>
     </main>
 
@@ -59,4 +92,5 @@
 </footer>
 </body>
 </html>     
+
 
